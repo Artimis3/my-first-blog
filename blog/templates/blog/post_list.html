@@ -6,15 +6,13 @@
 		<div>
 			<h1><a href="">Django Girls Blog</a></h1>
 		</div>
+	{% for post in posts %}
 		<div>
-			<p>published: 13.09.2016, 11:18</p>
-			<h2>My first Blog post</h2>
-			<p>This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph.</p>
+		
+			<p>published: {{ post.published_date }}</p>
+			<h1><a href="">{{ post.title }}</a></h1>
+			<p>{{ post.text|linebreaksbr }}</p>
 		</div>
-		<div>
-			<p>published: 14.06.2016, 20:14</p>
-			<h2>My second blog</h2>
-			<p>This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph. This is a sample paragraph.</p>
-		</div>
+	{% endfor %}
 	</body>
 </html>
